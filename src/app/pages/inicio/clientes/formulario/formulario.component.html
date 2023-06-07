@@ -1,0 +1,66 @@
+<div mat-dialog-content fusePerfectScrollbar>
+    <button
+    class="exit-btn"     
+    (click)="matDialogRef.close()" 
+    matTooltip="Cerrar"                
+    mat-icon-button
+    color="warn" 
+    type="button">
+    <mat-icon>close</mat-icon>                
+  </button>
+  <h1 class="title">{{this.titulo}}</h1>
+  
+  <form [formGroup]="formulario">
+      <div style="text-align: left; width: 100%">
+  
+        <mat-divider></mat-divider>
+
+        <mat-form-field>
+            <mat-label><strong>IdFiscal</strong></mat-label>
+            <input matInput  title="Ingresa el nombre de la definición" style="width: 70%" formControlName='IdFiscal'>
+          </mat-form-field>
+
+        <mat-form-field>
+          <mat-label><strong>RazonSocial</strong></mat-label>
+          <input matInput  title="Ingresa el nombre de la definición" style="width: 70%" formControlName='RazonSocial'>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label><strong>FirmaSms</strong></mat-label>
+          <input matInput title="Ingresa el valor de la definición" style="width: 70%" formControlName='FirmaSms'>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label><strong>NombreContacto</strong></mat-label>
+          <input matInput  title="Ingresa el nombre de la definición" style="width: 70%" formControlName='NombreContacto'>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label><strong>TlfContacto</strong></mat-label>
+          <input matInput  title="Ingresa el nombre de la definición" style="width: 70%" formControlName='TlfContacto'>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label><strong>EmailContacto</strong></mat-label>
+          <input matInput title="Ingresa el valor de la definición" style="width: 70%" formControlName='EmailContacto'>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label><strong>Estado</strong></mat-label>
+          <input matInput title="Ingresa el valor de la definición" style="width: 70%" formControlName='Estado'>
+        </mat-form-field>
+  
+        <div>
+         <button class="cancelarBtn" mat-flat-button (click)="matDialogRef.close()" color="warn">
+           <mat-icon>close</mat-icon>
+         </button>
+         <button class="guardarBtn" mat-flat-button (click)="grabar()"
+                            color="accent"
+                            [disabled]="formulario.invalid">
+            <mat-icon>save</mat-icon>
+          </button>
+        </div>
+                 
+      </div>
+  </form>
+  

@@ -1,0 +1,97 @@
+<!-- //TOPMENU// -->
+<mat-toolbar color="primary">
+
+    <button class="toolbarButtom" type="button" mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+  
+    <span style="color: #6de9dede;">Servicio de Mensajería</span>
+  
+    <span class="tituloPag"> {{ tituloService.titulo$ | async }} </span>
+
+    <!-- <span class="saldo">Saldo: {{ saldo }} </span> -->
+  
+  
+    <a class="salir" mat-icon-button href="#/auth" title="Salir">
+      <mat-icon>exit_to_app</mat-icon>
+    </a>
+  
+  </mat-toolbar>
+  <!-- //SINENAV// -->
+
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="over">
+      <a
+      mat-mini-fab  
+      class="sideMenuButtom"
+      Some button
+      mat-stroked-button
+      color="basic"
+      title="Campañas."
+      routerLink="SubirDoc"
+      (click)="drawer.toggle()"
+      >
+        <mat-icon>unarchive</mat-icon>
+      </a>
+      <a
+      mat-mini-fab  
+      class="sideMenuButtom"
+      Some button
+      mat-stroked-button
+      color="basic"
+      title="Maestro de Envíos."
+      routerLink="Envios"
+      (click)="drawer.toggle()"
+      >
+        <mat-icon>mail</mat-icon>
+      </a>
+      <a
+      mat-mini-fab  
+      class="sideMenuButtom"
+      Some button
+      mat-stroked-button
+      color="basic"
+      title="Clientes"
+      routerLink="Clientes"
+      (click)="drawer.toggle()"
+      >
+        <mat-icon>library_books</mat-icon>
+      </a>
+      <a
+      mat-mini-fab  
+      class="sideMenuButtom"
+      Some button
+      mat-stroked-button
+      color="basic"
+      title="Historial de recargas"
+      routerLink="Saldo"
+      (click)="drawer.toggle()"
+      >
+        <mat-icon>credit_card</mat-icon>
+      </a>
+      <a
+      mat-mini-fab  
+      class="sideMenuButtom"
+      Some button
+      mat-stroked-button
+      color="basic"
+      title="Configuración del usuario"
+      routerLink="Configuracion"
+      (click)="drawer.toggle()"
+      >
+        <mat-icon>settings</mat-icon>
+      </a>
+      <a mat-mini-fab class="sideMenuButtom" Some button mat-stroked-button color="basic" routerLink="Definiciones" title="Definiciones." (click)="drawer.toggle()">
+        <mat-icon>list</mat-icon>
+      </a>
+      <!-- <a mat-mini-fab class="sideMenuButtom" Some button mat-stroked-button color="basic" routerLink="Configuració." title="Configuración." (click)="drawer.toggle()">
+        <mat-icon>settings</mat-icon>
+      </a> -->
+    </mat-drawer>
+  
+    <router-outlet (emitSaldo) = "getSaldo($event)"></router-outlet>
+  
+  
+  </mat-drawer-container>
+  

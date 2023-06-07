@@ -1,0 +1,106 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-form-field{
+  margin-top: 0;
+}
+
+header{
+  margin-top: 5%;
+}
+
+.exit-btn{
+  right: 0;
+  float: right;
+}
+
+.numero{
+  text-align-last:right;
+}
+
+.string{
+  text-align: left;
+}
+
+.table{
+  margin-top: 10px;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 98%;
+  table-layout: fixed;
+
+}
+
+.mat-header-cell, .mat-cell {
+  min-width: 30px;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center !important;
+}
+
+.mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+  text-align: center !important;
+}
+
+table {
+  width: 100%;
+}
+
+.exitBtn{
+  float: right;
+}
+
+th{
+  font-size:medium;
+  background-color: #74b0ff;
+  border-left: solid 1px #000000;
+  border-bottom: solid 2px #000000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center !important;
+}
+td  {
+  border-left: solid 1px #747474;
+  font-size:medium; 
+}
+.example-container-table {
+  height: 800px;
+  overflow: auto;
+}
+
+h1 {
+  display: inline;
+}
+h2 {
+  display: inline;
+}
+
+.tabul-large {
+  margin-left: 30%;
+}
+
+.tabul {
+  margin-left: 30px;
+}
+p {
+  display: inline;
+}
+.ModifyBtn{
+margin: 0;
+}
+.mat-row:nth-child(even){
+  background-color:#ffffff
+}
+
+.mat-row:nth-child(odd){
+  background-color:#c9c9c9
+}
+.crearDefBtn{
+  float: right;
+  margin-top: 5px;
+  margin-right: 30px;
+}

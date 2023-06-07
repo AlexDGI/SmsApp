@@ -1,0 +1,96 @@
+<div mat-dialog-content fusePerfectScrollbar>
+    <button
+    class="exit-btn"     
+    (click)="matDialogRef.close()" 
+    matTooltip="Cerrar"                
+    mat-icon-button
+    color="warn" 
+    type="button">
+    <mat-icon>close</mat-icon>                
+  </button>
+  <h1 class="title">{{this.titulo}}</h1>
+  
+  <form [formGroup]="formulario" autocomplete="off">
+      <div style="text-align: left; width: 100%">
+  
+        <mat-divider></mat-divider>
+
+        <!-- <mat-form-field>
+            <mat-label><strong>IdFiscal</strong></mat-label>
+            <input matInput  title="Ingresa el Id del cliente" style="width: 70%" formControlName='IdCliente'>
+        </mat-form-field> -->
+
+        <mat-form-field>
+          <mat-label><strong>Forma</strong></mat-label>
+          <input matInput  title="" style="width: 70%" formControlName='Forma'>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label><strong>Referencia</strong></mat-label>
+          <input matInput title="" style="width: 70%" formControlName='Referencia'>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label><strong>Fecha</strong></mat-label>
+          <input matInput type="date"  title="" style="width: 70%" formControlName='Fecha'>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label><strong>Fecha de transacción</strong></mat-label>
+          <input matInput type="date" title="" style="width: 70%" formControlName='FecTransaccion'>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label><strong>Monto</strong></mat-label>
+          <input matInput  title="" style="width: 70%" formControlName='Monto'>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label><strong>Banco</strong></mat-label>
+            <input matInput  title="" style="width: 70%" formControlName='Banco'>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label><strong>Cuenta</strong></mat-label>
+          <input matInput title="" style="width: 70%" formControlName='Cuenta'>
+        </mat-form-field>
+    
+        <mat-form-field *ngIf="accion">
+          <mat-label><strong>Fecha de verificación</strong></mat-label>
+          <input matInput type="date" title="" style="width: 70%" formControlName='FecVerificacion'>
+        </mat-form-field>
+  
+        <mat-form-field *ngIf="accion">
+          <mat-label><strong>Usuario verifico</strong></mat-label>
+          <input matInput  title="" style="width: 70%" formControlName='UsrVerifico'>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label><strong>Cantidad de mensajes</strong></mat-label>
+            <input matInput type="number" title="" style="width: 70%" formControlName='CantidSms'>
+        </mat-form-field>
+  
+        <mat-form-field *ngIf="accion">
+          <mat-label><strong>Estado</strong></mat-label>
+          <input matInput  title="" style="width: 70%" formControlName='Estado'>
+        </mat-form-field>
+  
+        <mat-form-field>
+            <mat-label><strong>Imagen</strong></mat-label>
+            <input matInput  title="" style="width: 70%" formControlName='Imagen'>
+        </mat-form-field>
+
+        <div>
+         <button class="cancelarBtn" mat-flat-button (click)="matDialogRef.close()" color="warn">
+           <mat-icon>close</mat-icon>
+         </button>
+         <button class="guardarBtn" mat-flat-button (click)="grabar()"
+                            color="accent"
+                            [disabled]="formulario.invalid || btnDesabilitado">
+            <mat-icon>save</mat-icon>
+          </button>
+        </div>
+                 
+      </div>
+  </form>
+  

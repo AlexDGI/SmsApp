@@ -1,0 +1,46 @@
+<div mat-dialog-content fusePerfectScrollbar>
+    <button
+    class="exit-btn"     
+    (click)="matDialogRef.close()" 
+    matTooltip="Cerrar"                
+    mat-icon-button
+    color="warn" 
+    type="button">
+    <mat-icon>close</mat-icon>                
+  </button>
+  <h1 class="title">{{this.titulo}}</h1>
+  
+  <form [formGroup]="formulario">
+      <div style="text-align: left; width: 100%">
+  
+        <mat-divider></mat-divider>
+
+        <mat-form-field>
+            <mat-label><strong>Nombre</strong></mat-label>
+            <input matInput  title="Ingresa el nombre de la definición" style="width: 70%" formControlName='Nombre'>
+          </mat-form-field>
+
+        <mat-form-field>
+          <mat-label><strong>Sigla</strong></mat-label>
+          <input matInput  title="Ingresa el nombre de la definición" style="width: 70%" formControlName='Siglas'>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label><strong>Valor</strong></mat-label>
+          <input matInput title="Ingresa el valor de la definición" style="width: 70%" formControlName='Valor'>
+        </mat-form-field>
+  
+        <div>
+         <button class="cancelarBtn" mat-flat-button (click)="matDialogRef.close()" color="warn">
+           <mat-icon>close</mat-icon>
+         </button>
+         <button class="guardarBtn" mat-flat-button (click)="grabar()"
+                            color="accent"
+                            [disabled]="formulario.invalid || btnDesabilitado">
+            <mat-icon>save</mat-icon>
+          </button>
+        </div>
+                 
+      </div>
+  </form>
+  

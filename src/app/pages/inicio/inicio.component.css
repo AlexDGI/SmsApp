@@ -1,0 +1,53 @@
+mat-toolbar{
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+span{
+    text-align: center;
+}
+/* .app{
+    border-top-right-radius: 50px;
+    padding-right:10px ;
+    background-color: #FFD740;
+} */
+.toolbarButtom {
+    
+    margin: 0;
+    padding: 0;
+}
+
+.sideMenuButtom {
+    margin: 3px;
+    display: list-item;
+}
+
+.spacer2 {
+    margin-left: 2px;
+}
+
+.spacer-3 {
+    margin-top: 10px;
+}
+
+mat-drawer-container {
+min-height: 93.3%;
+}
+.tituloPag{
+    padding-top: 5px;
+    margin-left: 25%;
+    margin-right:auto;
+}
+.saldo{
+    
+    font-size: medium;
+    padding-top: 40%px;
+    margin-right:auto;
+}
+.salir{
+    position: absolute;
+    right: 10px;
+}

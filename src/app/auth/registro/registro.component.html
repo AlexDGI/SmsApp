@@ -1,0 +1,90 @@
+<div class="fondo">
+
+ <!-- //TOPMENU// -->
+    <mat-toolbar color="primary">
+        <img src="https://www.gcpron.cl/fondos/cl/JPG-02.jpg" style="width: 100px; border-radius: 20px; margin-right: 20px;">
+        <h2 class="titulo">SMS</h2>
+        <a class="volver" mat-icon-button href="#/auth" title="Volver">
+            <mat-icon>arrow_back</mat-icon>
+        </a>
+      </mat-toolbar>
+
+<mat-card class="container-padre">
+    <mat-card-title>Registro de usuario</mat-card-title>
+    <mat-card class="card">
+      <form [formGroup]="formulario" autocomplete="off">
+          <mat-card-content>
+            <mat-form-field>
+                <mat-label><strong>Nombre de usuario</strong></mat-label>
+                <input matInput formControlName='nombre' title="Ingrese el nombre de usuario que desea">
+            </mat-form-field>
+            <!-- <span class="warnings" *ngIf="this.formulario.get('nombre')?.errors?.['required']">
+                (Este campo no puede estar vacío)
+            </span> -->
+
+            <mat-form-field>
+                <mat-label><strong>Id Fiscal</strong></mat-label>
+                <input matInput formControlName='idFiscal' title="Ingrese el Id Fiscal de la empresa">
+            </mat-form-field>
+            <!-- <span class="warnings" *ngIf="this.formulario.get('idFiscal')?.errors?.['required']">
+                (Este campo no puede estar vacío)
+            </span> -->
+
+            <mat-form-field>
+                <mat-label><strong>Empresa</strong></mat-label>
+                <input matInput formControlName='empresa' title="Ingrese el nombre de su empresa">
+            </mat-form-field>
+            <!-- <span class="warnings" *ngIf="this.formulario.get('empresa')?.errors?.['required']">
+                (Este campo no puede estar vacío)
+            </span> -->
+
+            <mat-form-field>
+                <mat-label><strong>Email</strong></mat-label>
+                <input matInput formControlName='email' title="Ingrese su Email">
+            </mat-form-field>
+            <span class="warnings" *ngIf="this.formulario.get('email')?.errors?.['email']">
+                (Tiene que ser un formato conocido de Email)
+            </span>
+
+            <mat-form-field>
+                <mat-label><strong>Teléfono</strong></mat-label>
+                <input matInput formControlName='tlf' title="Ingrese su número de teléfono">
+            </mat-form-field>
+            <span class="warnings" *ngIf="this.formulario.get('tlf')?.errors?.['minlength']">
+                (Debe contener 11 carácteres)
+            </span>
+            <span class="warnings" *ngIf="this.formulario.get('tlf')?.errors?.['maxlength']">
+                (Debe contener 11 carácteres)
+            </span>
+            <mat-form-field>
+                <mat-label><strong>Clave</strong></mat-label>
+                <input matInput type="password" formControlName='clave' title="Ingrese la clave que desea">
+            </mat-form-field>
+            <span class="warnings" *ngIf="this.formulario.get('clave')?.errors?.['minlength']">
+                (Debe contener un mínimo de 6 carácteres)
+            </span>
+            
+            <mat-form-field>
+                <mat-label><strong>Verificar Clave</strong></mat-label>
+                <input matInput type="password" formControlName='vClave' title="Verifique la clave">
+            </mat-form-field>
+            <span class="warnings" *ngIf="this.formulario.get('vClave')?.errors?.['passwordsNotMatching']">
+                (La clave no coincide con la anterior)
+            </span>
+
+
+  
+  
+            <mat-card-actions>
+              <button mat-flat-button (click)="registrar()"
+                              type="submit"
+                              title="Registrar nuevo usuario"
+                              color="accent"
+                              [disabled]="formulario.invalid || btnDesabilitado" cdkFocusInitial>Registrar</button>
+            </mat-card-actions>
+          </mat-card-content>
+  
+      </form>
+    </mat-card>
+  </mat-card>
+</div> 

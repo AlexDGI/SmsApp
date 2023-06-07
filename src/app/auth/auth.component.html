@@ -1,0 +1,51 @@
+<div class="fondo">
+    <!-- //TOPMENU// -->
+    <mat-toolbar color="primary">
+      <img src="https://www.gcpron.cl/fondos/cl/JPG-02.jpg" style="width: 100px; border-radius: 20px; margin-right: 20px;">
+      <h2 class="titulo">SMS</h2>
+    </mat-toolbar>
+    
+    <mat-card class="container-padre">
+      <mat-card-title>Login</mat-card-title>
+      <mat-card class="card">
+        <form [formGroup]="formulario" autocomplete="off">
+            <mat-card-content>
+                <mat-form-field>
+                  <mat-label><strong>Usuario</strong></mat-label>
+                  <input matInput formControlName='login' title="Ingrese su nombre de usuario">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label><strong>Clave</strong></mat-label>
+                  <input matInput type="password" formControlName='clave' title="Ingrese la clave de su ususario">
+                </mat-form-field>
+    
+                <mat-form-field *ngIf="verEmpresa">
+                  <mat-label><strong>Cliente</strong></mat-label>
+                  <mat-select (selectionChange)="seleccionarAcceso($event)">
+                    <mat-option *ngFor="let opcion of clientes" [value]="opcion.base">
+                      {{opcion.nombre}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+    
+              <mat-card-actions>
+                <button mat-flat-button (click)="ingresar(formulario)"
+                                type="submit"
+                                title="Ingresar"
+                                color="accent"
+                                [disabled]="formulario.invalid || btnDesabilitado" cdkFocusInitial>Entrar</button>
+              </mat-card-actions>
+              <div>
+                <mat-icon class="key">key</mat-icon>
+                <a class="recuText" (click)="irARecClave()">He olvidado mi contraseña.</a>
+              </div>
+              <div>
+                <mat-icon class="regIcon">app_registration</mat-icon>
+                <a class="regText" (click)="irARegistro()">Registrarme.</a>
+              </div>
+            </mat-card-content>
+    
+        </form>
+      </mat-card>
+    </mat-card>
+    </div>

@@ -1,0 +1,18 @@
+.example-card {
+    margin: 30px auto ;
+    width: 90%;
+    text-align: center;
+  }
+  .upBtn{
+    margin: 3px;
+  }
+  .searchBtn{
+    margin: 3px;
+  }
+  button{
+    display: inline;
+  }
+  .archivoNombre{
+    width: 20%;
+    display: inline;
+  }

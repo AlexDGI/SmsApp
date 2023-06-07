@@ -1,0 +1,11 @@
+mat-form-field{
+    display: block;
+  }
+  .cancelarBtn{
+      margin-right: 3px;
+      margin-left: 3px;
+  }
+  .guardarBtn{
+      margin-right: 3px;
+      margin-left: 3px;
+  }

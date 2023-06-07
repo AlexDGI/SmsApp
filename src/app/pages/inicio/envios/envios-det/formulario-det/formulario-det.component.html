@@ -1,0 +1,60 @@
+<div mat-dialog-content fusePerfectScrollbar>
+    <button
+    class="exit-btn"     
+    (click)="matDialogRef.close()" 
+    matTooltip="Cerrar"                
+    mat-icon-button
+    color="warn" 
+    type="button">
+    <mat-icon>close</mat-icon>                
+  </button>
+  <h1 class="title">{{this.titulo}}</h1>
+  
+  <form [formGroup]="formulario" autocomplete="off">
+      <div style="text-align: left; width: 100%">
+  
+        <mat-divider></mat-divider>
+
+        <mat-form-field>
+            <mat-label><strong>IdMae</strong></mat-label>
+            <input matInput  title="Ingresa el Id del cliente" style="width: 70%" formControlName='IdMae'>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label><strong>Telefono</strong></mat-label>
+          <input matInput  title="Ingresa el nombre del cliente" style="width: 70%" formControlName='Telefono'>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label><strong>Mensaje</strong></mat-label>
+          <input matInput title="Ingresa el mensaje que quieres enviar" style="width: 70%" formControlName='Mensaje'>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label><strong>Dato 1</strong></mat-label>
+          <input matInput title="Ingresa la cantidad de registros" style="width: 70%" formControlName='Dato1'>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label><strong>Dato 2</strong></mat-label>
+            <input matInput title="Ingresa la cantidad de registros" style="width: 70%" formControlName='Dato2'>
+          </mat-form-field>
+
+        <mat-form-field>
+          <mat-label><strong>Estado</strong></mat-label>
+          <input matInput  title="Ingresa el estado del envío" style="width: 70%" formControlName='Estado'>
+        </mat-form-field>
+
+        <div>
+         <button class="cancelarBtn" mat-flat-button (click)="matDialogRef.close()" color="warn">
+           <mat-icon>close</mat-icon>
+         </button>
+         <button class="guardarBtn" mat-flat-button (click)="grabar()"
+                            color="accent"
+                            [disabled]="formulario.invalid || btnDesabilitado">
+            <mat-icon>save</mat-icon>
+          </button>
+        </div>
+                 
+      </div>
+</form>

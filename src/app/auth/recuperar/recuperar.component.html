@@ -1,0 +1,46 @@
+<div class="fondo">
+  <!-- //TOPMENU// -->
+  <mat-toolbar color="primary">
+    <img
+      src="https://www.gcpron.cl/fondos/cl/JPG-02.jpg"
+      style="width: 100px; border-radius: 20px; margin-right: 20px"
+    />
+    <h2 class="titulo">SMS</h2>
+    <a class="volver" mat-icon-button href="#/auth" title="Volver">
+      <mat-icon>arrow_back</mat-icon>
+    </a>
+  </mat-toolbar>
+
+  <mat-card class="container-padre">
+    <mat-card-title>Recuperar contraseña</mat-card-title>
+    <mat-card class="card">
+      <form [formGroup]="formulario" autocomplete="off">
+        <mat-card-content>
+            <h3><strong>Se le enviará un correo con la contraseña provisional al correo afiliado.</strong></h3>
+          <mat-form-field>
+            <mat-label><strong>Nombre de usuario</strong></mat-label>
+            <input
+              matInput
+              formControlName="login"
+              title="Ingrese el usuario que desea recuperar"
+            />
+          </mat-form-field>
+          <mat-card-actions>
+            <button
+              mat-flat-button
+              type="submit"
+              title="Generar clave provisional"
+              (click)="actualizarClave()"
+              color="accent"
+              [disabled]="formulario.invalid || btnDesabilitado"
+              cdkFocusInitial
+            >
+              Generar clave
+            </button>
+          </mat-card-actions>
+        </mat-card-content>
+      </form>
+    </mat-card>
+  </mat-card>
+
+</div>

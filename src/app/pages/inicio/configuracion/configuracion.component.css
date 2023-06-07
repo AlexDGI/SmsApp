@@ -1,0 +1,30 @@
+.container-padre{
+    background-color: #673ab7;
+    width: 30%;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+.titulo{
+    text-align: center !important;
+}
+
+
+
+.mat-card-title{
+    text-align: center;
+    color: white;
+}
+mat-form-field{
+    display: block;
+}
+mat-card-actions{
+    text-align: center;
+}
+.warnings{
+    color: red;
+}
+.volver{
+    position: absolute;
+    right: 10px;
+}

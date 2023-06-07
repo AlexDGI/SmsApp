@@ -1,0 +1,120 @@
+<mat-card class="example-card">
+  <mat-card-content>
+    <div style="text-align: left; width: 100%">
+      <h2>Elija el archivo a subir</h2>
+      <!-- <input class="searchInpt"  hidden (change)="convertirCsv($event)" [(ngModel)]="inputArchivo" #fileUpload type="file" id="inputFile" accept=".csv">
+
+        <button 
+        (click)="fileUpload.click()"
+          matTooltip="Buscar"                
+          mat-raised-button 
+          type="button"                    
+          class="searchBtn"
+          title="Buscar el archivo en tu equipo"
+          color="accent">
+          <p style="display:inline;" >Buscar</p>
+          <mat-icon>search</mat-icon>                
+        </button>
+        <input class="archivoNombre" matInput type="text" value="{{inputArchivo}}"> -->
+
+      <input
+        style="display: none"
+        id="file"
+        accept=".xlsx,.xls"
+        #fileInput
+        class="form-control"
+        type="file"
+        (change)="incomingfile($event)"
+      />
+      <pre *ngIf="file">{{ file.name }}</pre>
+      <button
+      style="margin-right: 10px ;"
+        mat-flat-button
+        color="accent"
+        (click)="fileInput.click()"
+        title="Buscar archivo"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+      <button mat-raised-button
+      [disabled]="botonSubir" color="primary" (click)="Upload()">
+        Subir
+      </button>
+    </div>
+    <!--Flag variable is used here-->
+    <div class="container" *ngIf="loading">
+      <h3>Loading ...</h3>
+
+      <!-- <button 
+            (click)="subirDatos()"
+            matTooltip="Subir"                
+            mat-raised-button 
+            type="button"
+            title="Cargar"                  
+            class="upBtn"
+            color="primary">
+            <mat-icon>publish</mat-icon>                
+        </button> -->
+      <mat-progress-bar
+        class="progress-bar"
+        mode="determinate"
+        [value]="uploadProgress"
+        *ngIf="uploadProgress"
+      >
+      </mat-progress-bar>
+    </div>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-content style="text-align: left; width: 100%">
+    <mat-card-header>
+      <mat-card-title style="margin-top: 20px"
+        >Guía de subida de registros de SMS</mat-card-title
+      >
+    </mat-card-header>
+    <ul>
+      <li>El archivo que se va a subir debe ser en formato .XLSX</li>
+      <li>
+        Debe tener las siguientes columnas con el valor que se requiera según la
+        descripción de cada una:
+      </li>
+      <ol>
+        <li>
+          <strong>Telefono</strong>: El número de teléfono al que se enviará el
+          mensaje (esta columna deberá tener formato de texto).
+        </li>
+        <li><strong>Mensaje</strong>: El mensaje que se enviará.</li>
+        <li>
+          <strong>Dato</strong>: El dato/Deuda que está ligado al dueño del
+          teléfono estará Dato1, Dato2 y Dato3
+        </li>
+        <li>
+          <strong>Fecha de envío</strong>: La fecha en la que quiere que se
+          realice el envío del mensaje (esta columna deberá tener formato de
+          fecha latinoamérica).
+        </li>
+        <li>
+          <strong>Hora de envío</strong>: la hora en la que quiere que se
+          realice el envío (esta columna deberá tener formato de hora
+          latinoamérica).
+        </li>
+        <li>
+          <strong>Correo</strong>: El correo de la persona a la que llegará el mensaje (debe
+          tener el formato correcto de correo).
+        </li>
+      </ol>
+      <li>Puede descargar la plantilla de Excel para facilitar su trabajo:</li>
+      <a matTooltip="Buscar"
+      mat-raised-button
+      type="button"
+      class="searchBtn"
+      title="Descargar plantilla"
+      color="primary" href="https://sms.iot-ve.com/api/sms.xlsx">Plantilla Excel</a>
+      <li>Después de descargar la plantilla debe abrirla con Excel.</li>
+      <li>Agrega los datos en sus respectivas columnas.</li>
+      <li>
+        Guarda y sube el archivo buscandolo en con el botón buscar que está
+        arriba.
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
